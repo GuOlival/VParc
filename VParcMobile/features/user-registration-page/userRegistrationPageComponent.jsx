@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, ScrollView, TextInput } from "react-native";
+import { StyleSheet, Text, View, ScrollView, TextInput, SafeAreaView } from "react-native";
 import { 
     Nunito_200ExtraLight,
     Nunito_200ExtraLight_Italic,
@@ -68,70 +68,72 @@ const UserRegistrationComponent = ({navigation}) => {
     });
 
     return (
-        <ScrollView style = { styles.container }>
-            <View style = { styles.textContainer }>
-                <Text style = { styles.title }>
-                    Vamos Cadastrar?
-                </Text>
-                <Text style = { styles.description }>
-                    Tenha acesso a diversos livros universitários no preçinho
-                </Text>
-            </View>
-
-            <View style = {styles.inputTextContainer}>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userName}
-                        placeholder = "Nome"
-                        onChangeText = { (name) => updateUserName(name) }
-                    />
-                </View>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userLastName}
-                        placeholder = "Sobrenome"
-                        onChangeText = { (lastName) => updateUserLastName(lastName) }
-                    />
-                </View>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userEmail}
-                        placeholder = "E-mail Institucional"
-                        onChangeText = { (email) => updateUserEmail(email) }
-                    />
-                </View>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userRA}
-                        placeholder = "Registro Acadêmico (RA)"
-                        onChangeText = { (ra) => updateUserRA(ra) }
-                        keyboardType = "numeric"
-                    />
-                </View>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userPhone}
-                        placeholder = "Celular"
-                        onChangeText = { (phone) => updateUserPhone(phone) }
-                        keyboardType = "numeric"
-                    />
-                </View>
-                <View style = { styles.inputView }>
-                    <InputFieldRegistration 
-                        value = {userPassword}
-                        placeholder = "Senha"
-                        onChangeText = { (password) => updateUserPassword(password) }
-                        secureTextEntry = {true}
-                    />
+        <SafeAreaView style = { styles.container }>
+            <ScrollView style = { styles.scrollView }>
+                <View style = { styles.textContainer }>
+                    <Text style = { styles.title }>
+                        Vamos Cadastrar?
+                    </Text>
+                    <Text style = { styles.description }>
+                        Tenha acesso a diversos livros universitários no preçinho
+                    </Text>
                 </View>
 
-                <MenuButtonComponent
-                titulo = "Criar conta"
-                cor = { colors.tertiary }
-                onPress = { () => {} }
-                />
-            </View>
-        </ScrollView>
+                <View style = {styles.inputTextContainer}>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userName}
+                            placeholder = "Nome"
+                            onChangeText = { (name) => updateUserName(name) }
+                        />
+                    </View>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userLastName}
+                            placeholder = "Sobrenome"
+                            onChangeText = { (lastName) => updateUserLastName(lastName) }
+                        />
+                    </View>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userEmail}
+                            placeholder = "E-mail Institucional"
+                            onChangeText = { (email) => updateUserEmail(email) }
+                        />
+                    </View>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userRA}
+                            placeholder = "Registro Acadêmico (RA)"
+                            onChangeText = { (ra) => updateUserRA(ra) }
+                            keyboardType = "numeric"
+                        />
+                    </View>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userPhone}
+                            placeholder = "Celular"
+                            onChangeText = { (phone) => updateUserPhone(phone) }
+                            keyboardType = "numeric"
+                        />
+                    </View>
+                    <View style = { styles.inputView }>
+                        <InputFieldRegistration 
+                            value = {userPassword}
+                            placeholder = "Senha"
+                            onChangeText = { (password) => updateUserPassword(password) }
+                            secureTextEntry = {true}
+                        />
+                    </View>
+
+                    <MenuButtonComponent
+                    titulo = "Criar conta"
+                    cor = { colors.tertiary }
+                    onPress = { () => {} }
+                    />
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 

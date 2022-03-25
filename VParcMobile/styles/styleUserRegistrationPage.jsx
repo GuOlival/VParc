@@ -4,7 +4,10 @@ import colors from './colors';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    scrollView: {
         backgroundColor: colors.grayLight,
+        height: '80%'
     },
     title: {
         color: colors.black,
@@ -19,13 +22,13 @@ const styles = StyleSheet.create({
         fontFamily: 'Nunito_400Regular'
     },
     textContainer: {
-        marginTop: 30,
-        marginBottom: 24,
-        marginHorizontal: 30,
+        marginTop: '10%',
+        marginHorizontal: '10%',
         flex: 1,
         flexWrap: "wrap",
         justifyContent: "center",
-        alignSelf: "center",
+        alignSelf: "stretch",
+        textAlign: "center",
         flexDirection: "column"
     },
     inputView: {
@@ -44,14 +47,15 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white
     },
     inputTextContainer: {
-        flex: 1,
-        marginHorizontal: 30,
-        marginTop: 30,
+        flex: 3,
+        marginTop: '10%',
+        marginBottom: '10%',
+        marginHorizontal: '10%',
         alignItems: "center",
         justifyContent: "center",
         alignSelf: 'stretch',
         flexDirection: "column"
-    },
+    }
 });
 
 export default styles;
